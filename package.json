@@ -1,0 +1,23 @@
+{
+  "name": "saga",
+  "version": "1.0.0",
+  "description": "Static version of Saga theme",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yamila-moreno/static-saga.git"
+  },
+  "author": "Yamila Moreno <yamila.ms@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yamila-moreno/static-saga/issues"
+  },
+  "homepage": "https://github.com/yamila-moreno/static-saga#readme",
+  "devDependencies": {
+    "bower": "^1.7.7",
+    "gulp": "^3.9.1",
+    "gulp-jade": "^1.1.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^2.2.0"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "saga",
+  "description": "Static version of Saga theme",
+  "main": "index.js",
+  "authors": [
+    "Yamila Moreno <yamila.ms@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/yamila-moreno/static-saga",
+  "moduleType": [
+    "amd",
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "normalize-scss": "^3.0.3"
+  }
+}

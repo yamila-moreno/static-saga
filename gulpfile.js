@@ -1,8 +1,8 @@
 var gulp = require("gulp"),
     jade = require("gulp-jade"),
     sass = require("gulp-sass"),
-    concat = require("gulp-concat"),
-    connect = require('gulp-connect');
+    webserver = require('gulp-webserver'),
+    plumber = require('gulp-plumber');
 
 var paths = {};
 paths.base = "";
@@ -17,20 +17,16 @@ paths.sass = [
 ];
 
 gulp.task('dev-webserver', function() {
-  connect.server({
-    root: paths.dist,
-    livereload: true,
-    fallback: paths.dist + 'index.html'
-  });
-});
-
-gulp.task('webserver-reload', function(){
-    connect.reload()
+    return gulp.src(paths.dist)
+        .pipe(webserver({
+            livereload: true
+        }));
 });
 
 
 gulp.task("styles", function() {
   return gulp.src(paths.sass)
+    .pipe(plumber())
     .pipe(sass({
       endless:"true",
       errLogToConsole: true,
@@ -38,12 +34,12 @@ gulp.task("styles", function() {
         paths.sass,
       ]
     }))
-    .pipe(concat("style.css"))
     .pipe(gulp.dest(paths.dist));
 });
 
 gulp.task("templates", function() {
     return gulp.src(paths.jade)
+        .pipe(plumber())
         .pipe(jade({pretty: true}))
         .pipe(gulp.dest(paths.dist));
 });
@@ -51,8 +47,8 @@ gulp.task("templates", function() {
 gulp.task("compile", ["styles", "templates"]);
 
 gulp.task("watch", function() {
-  gulp.watch(paths.sass, ["styles", "webserver-reload"]);
-  gulp.watch(paths.jade, ["templates","webserver-reload"]);
+  gulp.watch(paths.sass, ["styles"]);
+  gulp.watch(paths.jade, ["templates"]);
 });
 
 gulp.task("default", ["compile", "watch", "dev-webserver"]);

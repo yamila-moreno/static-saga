@@ -5,16 +5,10 @@ var gulp = require("gulp"),
     plumber = require('gulp-plumber');
 
 var paths = {};
-paths.base = "";
 paths.dist = "dist/";
-
-paths.jade = [
-    paths.base + "**/*.jade"
-];
-
-paths.sass = [
-    paths.base + "sass/*.scss",
-];
+paths.jade = [ "**/*.jade" ];
+paths.sass = "sass/**.scss",
+paths.style = "sass/style.scss",
 
 gulp.task('dev-webserver', function() {
     return gulp.src(paths.dist)
@@ -23,9 +17,8 @@ gulp.task('dev-webserver', function() {
         }));
 });
 
-
 gulp.task("styles", function() {
-  return gulp.src(paths.sass)
+  return gulp.src(paths.style)
     .pipe(plumber())
     .pipe(sass({
       endless:"true",

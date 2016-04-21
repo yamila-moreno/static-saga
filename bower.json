@@ -19,6 +19,6 @@
     "tests"
   ],
   "devDependencies": {
-    "normalize-scss": "^3.0.3"
+    "reset-css": "^2.0.2011012603"
   }
 }

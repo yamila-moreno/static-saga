@@ -1,11 +1,9 @@
-@import "normalize.css";
+@import "../bower_components/reset-css/_reset";
 
-$font-stack:    Helvetica, sans-serif;
-$primary-color: #333;
-$background-color: #191970;
-
-body {
-  font: 100% $font-stack;
-  color: $primary-color;
-  background-color: $background-color;
+body * {
+  font-family: "Noto Sans",Helvetica,"Helvetica Neue",Arial,sans-serif;
 }
+
+@import "header";
+@import "main";
+@import "footer";

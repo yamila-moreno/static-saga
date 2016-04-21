@@ -14,7 +14,7 @@
   },
   "homepage": "https://github.com/yamila-moreno/static-saga#readme",
   "devDependencies": {
-    "bower": "^1.7.7",
+    "bower": "^1.7.9",
     "gulp": "^3.9.1",
     "gulp-jade": "^1.1.0",
     "gulp-plumber": "^1.1.0",

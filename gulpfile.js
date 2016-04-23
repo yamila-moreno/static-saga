@@ -3,6 +3,7 @@ var gulp = require("gulp"),
     sass = require("gulp-sass"),
     webserver = require('gulp-webserver'),
     plumber = require('gulp-plumber');
+    autoprefixer = require('gulp-autoprefixer');
 
 var paths = {};
 paths.dist = "dist/";
@@ -26,6 +27,10 @@ gulp.task("styles", function() {
       includePaths: [
         paths.sass,
       ]
+    }))
+    .pipe(autoprefixer({
+        browsers: ['last 2 versions'],
+        cascade: false
     }))
     .pipe(gulp.dest(paths.dist));
 });

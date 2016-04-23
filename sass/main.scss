@@ -1,6 +1,20 @@
 main {
-  min-height: 136px;
+  min-height: 1136px;
   background: #F2F2F2;
+  padding-left: 20px;
+  padding-top: 20px;
+
+  article {
+    margin-bottom: 20px;
+    margin-right: 20px;
+    background: #FFF;
+    width: 300px;
+    &.featured {
+      width: 600px;
+    }
+    float: left;
+    overflow: hidden;
+  }
 
   .loadmore {
     position: absolute;
@@ -8,13 +22,14 @@ main {
     left: 50%;
     opacity: 1;
     padding: 10px 20px;
+    background: white;
 
     a {
       text-transform: uppercase;
-      background: white;
       color: #000;
       text-decoration: none;
-      font-size: 0.4em;
+      font-size: 1em;
+      margin-right: 10px;
     }
   }
 }
